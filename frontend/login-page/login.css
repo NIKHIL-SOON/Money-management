@@ -1,0 +1,88 @@
+body { font-family: 'Inter', sans-serif; }
+        
+        /* Background Ambience */
+        .bg-ambient {
+            background-color: #050505;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(109, 40, 217, 0.1) 0%, transparent 50%);
+        }
+
+        /* Side Blend Gradient */
+        .image-side-blend {
+            background: linear-gradient(90deg, transparent 0%, #050505 100%);
+        }
+
+        /* Glass Panel */
+        .glass-panel {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Inputs */
+        .input-field {
+            background: #0F0F0F;
+            border: 1px solid #27272A;
+            transition: all 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #8B5CF6;
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.15);
+            outline: none;
+        }
+
+        /* Neon Button */
+        .btn-neon {
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+            transform: translateY(-1px);
+        }
+
+        /* Phone Float Animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+            100% { transform: translateY(0px) rotate(-2deg); }
+        }
+        .floating-mockup {
+            animation: float 8s ease-in-out infinite;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        /* Feature Cards Animation inside Phone */
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .feature-card {
+            opacity: 0;
+            animation: slideUpFade 0.6s ease forwards;
+        }
+        .feature-delay-1 { animation-delay: 0.2s; }
+        .feature-delay-2 { animation-delay: 1.5s; }
+        .feature-delay-3 { animation-delay: 3.0s; }
+        .feature-delay-4 { animation-delay: 4.5s; } /* New Feature Delay */
+
+        /* Toggle Transitions */
+        .hidden-field {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        .visible-field {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            animation: fadeIn 0.3s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
