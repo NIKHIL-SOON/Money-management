@@ -1,4 +1,4 @@
-let isLogin = true;
+ let isLogin = true;
 
         function toggleMode() {
             isLogin = !isLogin;
@@ -12,7 +12,7 @@ let isLogin = true;
             const loginExtras = document.getElementById('login-extras');
 
             if (isLogin) {
-                // Switch to Login
+                // Switch to Login Mode
                 title.textContent = "Welcome back to Spendly.";
                 subtitle.textContent = "Enter your details to access your dashboard.";
                 submitBtn.textContent = "Log In";
@@ -29,7 +29,7 @@ let isLogin = true;
                 }, 100);
 
             } else {
-                // Switch to Sign Up
+                // Switch to Sign Up Mode
                 title.textContent = "Join the Club.";
                 subtitle.textContent = "Start mastering your money flow today.";
                 submitBtn.textContent = "Create Account";

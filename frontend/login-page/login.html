@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Spendly.</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (Utility Framework) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -14,62 +14,63 @@
     <!-- Icons (Phosphor) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <link rel="stylesheet" href="./login.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
-                            light: '#A78BFA',
-                            DEFAULT: '#8B5CF6',
-                            dark: '#6D28D9',
+                            light: '#A78BFA',   /* Purple-400 */
+                            DEFAULT: '#8B5CF6', /* Purple-500 */
+                            dark: '#6D28D9',    /* Purple-700 */
                         }
                     }
                 }
             }
         }
     </script>
+    <!-- linking the css -->
+     <link rel="stylesheet" href="./login.css">
+
+    
 </head>
 <body class="bg-ambient text-white h-screen flex items-center justify-center overflow-hidden">
 
     <div class="w-full max-w-[1920px] h-full flex flex-col lg:flex-row relative">
 
         <!-- ================= LEFT COLUMN: VISUALS ================= -->
-        <div class="hidden lg:flex w-[55%] h-full relative flex-col justify-center items-center overflow-hidden">
+        <div class="visual-column">
             
-            <!-- Background Blob -->
+            <!-- Background Glow -->
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-dark/30 rounded-full blur-[120px]"></div>
             
             <div class="relative z-10 w-full max-w-xl px-12 flex flex-col items-center">
                 
-                <!-- Main Text -->
-                <div class="mb-8 text-center space-y-4">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-light/20 bg-brand-dark/10 backdrop-blur-md text-brand-light text-xs font-bold uppercase tracking-wider">
+                <!-- Main Header Text -->
+                <div class="mb-8 flex flex-col items-center space-y-4 text-center">
+                    <div class="version-badge">
                         <span class="w-2 h-2 rounded-full bg-brand-DEFAULT animate-pulse"></span>
                         Spendly v1.0
                     </div>
-                    <h1 class="text-5xl xl:text-6xl font-black tracking-tight leading-[1.1]">
+                    <h1 class="hero-headline">
                         Master Your <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-brand-light">Money Flow.</span>
+                        <span class="text-gradient-highlight">Money Flow.</span>
                     </h1>
                 </div>
 
-                <!-- 3D Phone Mockup with LIVE CSS UI -->
-                <div class="relative w-[300px] h-[600px] xl:w-[340px] xl:h-[680px] max-h-[70vh] floating-mockup">
+                <!-- 3D Phone Mockup -->
+                <div class="floating-phone-container">
                     
-                    <!-- Phone Frame -->
-                    <div class="absolute inset-0 bg-[#0A0A0A] rounded-[3rem] border-[8px] border-[#1f1f1f] shadow-2xl overflow-hidden flex flex-col">
-                        
-                        <!-- Notch (Z-Index above screen) -->
-                        <div class="absolute top-0 inset-x-0 h-7 bg-transparent z-30 flex justify-center">
-                            <div class="w-32 h-6 bg-[#000] rounded-b-xl"></div>
+                    <div class="phone-frame">
+                        <!-- Notch -->
+                        <div class="phone-notch">
+                            <div class="notch-blackout"></div>
                         </div>
 
-                        <!-- Screen Content (Live UI) - Now Full Cover -->
-                        <div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-black p-5 pt-12 flex flex-col gap-4 overflow-hidden">
+                        <!-- Screen Content -->
+                        <div class="phone-screen">
                             
-                            <!-- Header -->
+                            <!-- App Header -->
                             <div class="flex justify-between items-center mb-1 z-10">
                                 <span class="font-black italic text-lg text-white tracking-tight">Spendly.</span>
                                 <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
@@ -77,8 +78,8 @@
                                 </div>
                             </div>
 
-                            <!-- Animated Feature 1: Safe Spend (Hero) -->
-                            <div class="feature-card feature-delay-1 p-5 rounded-2xl bg-gradient-to-br from-brand-dark/20 to-brand-DEFAULT/5 border border-brand-light/10 text-center relative overflow-hidden shrink-0">
+                            <!-- Feature 1: Safe Spend -->
+                            <div class="feature-card card-hero delay-1">
                                 <div class="absolute top-0 right-0 w-20 h-20 bg-brand-DEFAULT/20 blur-xl rounded-full"></div>
                                 <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Safe to Spend</p>
                                 <h3 class="text-4xl font-black text-white drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]">₹355</h3>
@@ -88,8 +89,8 @@
                                 </div>
                             </div>
 
-                            <!-- Animated Feature 2: Weekend Mode -->
-                            <div class="feature-card feature-delay-2 p-4 rounded-2xl bg-[#18181b] border border-white/5 flex items-center justify-between shrink-0">
+                            <!-- Feature 2: Weekend Mode -->
+                            <div class="feature-card card-standard delay-2">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center">
                                         <i class="ph-fill ph-confetti text-lg"></i>
@@ -104,8 +105,8 @@
                                 </div>
                             </div>
 
-                            <!-- Animated Feature 3: Goals -->
-                            <div class="feature-card feature-delay-3 p-4 rounded-2xl bg-[#18181b] border border-white/5 shrink-0">
+                            <!-- Feature 3: Goals -->
+                            <div class="feature-card card-standard delay-3" style="display: block;">
                                 <div class="flex justify-between items-end mb-2">
                                     <div>
                                         <p class="text-[10px] text-gray-500 uppercase font-bold">Goal</p>
@@ -120,8 +121,8 @@
                                 </div>
                             </div>
 
-                            <!-- Animated Feature 4: Squad Sync (NEW) -->
-                            <div class="feature-card feature-delay-4 p-4 rounded-2xl bg-[#18181b] border border-white/5 shrink-0 flex items-center justify-between">
+                            <!-- Feature 4: Squad Sync -->
+                            <div class="feature-card card-standard delay-4">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
                                         <i class="ph-fill ph-users text-lg"></i>
@@ -137,23 +138,24 @@
                                 </div>
                             </div>
 
-                            <!-- Decorative Bottom Blur -->
+                            <!-- Bottom Blur Gradient -->
                             <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
                         </div>
-
                     </div>
                     
-                    <!-- Glow behind phone -->
+                    <!-- Back Glow behind phone -->
                     <div class="absolute -inset-4 bg-brand-DEFAULT/20 blur-2xl -z-10 rounded-[3rem]"></div>
                 </div>
             </div>
 
-            <div class="absolute inset-y-0 right-0 w-32 image-side-blend z-20"></div>
+            <!-- Right Edge Blend -->
+            <div class="side-blend-gradient"></div>
         </div>
 
-        <!-- ================= RIGHT COLUMN: LOGIN FORM ================= -->
-        <div class="w-full lg:w-[45%] h-full relative z-30 flex items-center justify-center lg:justify-start lg:pl-16 p-6">
-            <div class="glass-panel w-full max-w-[420px] rounded-3xl p-8 lg:p-10 relative">
+        <!-- ================= RIGHT COLUMN: FORM ================= -->
+        <div class="form-column">
+            <div class="auth-card">
+                
                 <div class="text-center mb-8">
                     <h2 class="text-2xl font-bold text-white mb-2" id="form-title">Welcome back to Spendly.</h2>
                     <p class="text-gray-500 text-sm" id="form-subtitle">Enter your details to access your dashboard.</p>
@@ -161,32 +163,35 @@
 
                 <form class="space-y-5" onsubmit="event.preventDefault(); window.location.href='index.html'">
                     
-                    <!-- Name Field (Hidden by default) -->
+                    <!-- Name Field (Hidden) -->
                     <div id="name-field" class="hidden-field space-y-1.5">
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Full Name</label>
-                        <div class="relative">
-                            <input type="text" class="input-field w-full rounded-xl px-4 py-3.5 pl-11 text-sm text-white placeholder-gray-600 focus:text-white" placeholder="John Doe">
-                            <i class="ph-bold ph-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg"></i>
+                        <div class="form-input-group">
+                            <input type="text" class="form-input" placeholder="John Doe">
+                            <i class="ph-bold ph-user input-icon"></i>
                         </div>
                     </div>
 
+                    <!-- Email Field -->
                     <div class="space-y-1.5">
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Email</label>
-                        <div class="relative">
-                            <input type="email" class="input-field w-full rounded-xl px-4 py-3.5 pl-11 text-sm text-white placeholder-gray-600 focus:text-white" placeholder="name@example.com">
-                            <i class="ph-bold ph-envelope-simple absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg"></i>
+                        <div class="form-input-group">
+                            <input type="email" class="form-input" placeholder="name@example.com">
+                            <i class="ph-bold ph-envelope-simple input-icon"></i>
                         </div>
                     </div>
 
+                    <!-- Password Field -->
                     <div class="space-y-1.5">
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Password</label>
-                        <div class="relative">
-                            <input type="password" class="input-field w-full rounded-xl px-4 py-3.5 pl-11 text-sm text-white placeholder-gray-600 focus:text-white" placeholder="••••••••">
-                            <i class="ph-bold ph-lock-key absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg"></i>
+                        <div class="form-input-group">
+                            <input type="password" class="form-input" placeholder="••••••••">
+                            <i class="ph-bold ph-lock-key input-icon"></i>
                             <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition"><i class="ph-bold ph-eye-slash"></i></button>
                         </div>
                     </div>
 
+                    <!-- Extras -->
                     <div id="login-extras" class="flex items-center justify-between text-xs">
                         <label class="flex items-center gap-2 cursor-pointer group">
                             <input type="checkbox" class="w-4 h-4 rounded border-gray-700 bg-[#0F0F0F] text-brand-DEFAULT focus:ring-brand-DEFAULT/50">
@@ -195,7 +200,8 @@
                         <a href="#" class="text-brand-light hover:text-white transition font-medium">Forgot Password?</a>
                     </div>
 
-                    <button type="submit" id="submit-btn" class="btn-neon w-full py-3.5 rounded-xl text-white font-bold text-sm tracking-wide mt-2">Log In</button>
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="btn-primary">Log In</button>
 
                     <!-- Divider -->
                     <div class="relative flex py-2 items-center">
@@ -205,7 +211,7 @@
                     </div>
 
                     <!-- Google Button -->
-                    <button type="button" class="w-full bg-[#18181b] hover:bg-[#202023] border border-white/5 text-white font-medium py-3.5 rounded-xl transition-all flex items-center justify-center gap-3">
+                    <button type="button" class="btn-social">
                         <svg class="w-5 h-5" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="color:#4285F4"></path>
                             <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="color:#34A853"></path>
@@ -226,8 +232,9 @@
             </div>
         </div>
     </div>
-    <script src=".//login.js"></script>   <!-- js to login page -->
 
+    <!-- Toggle Script -->
+     <script src="./login.js"></script>
     
 </body>
 </html>
