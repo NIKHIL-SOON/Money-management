@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Spendly.</title>
     
-    <!-- Tailwind CSS (Utility Framework) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Icons (Phosphor) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
     <script>
@@ -29,24 +26,18 @@
             }
         }
     </script>
-    <!-- linking the css -->
-     <link rel="stylesheet" href="./login.css">
-
-    
+    <link rel="stylesheet" href="./login.css">
 </head>
 <body class="bg-ambient text-white h-screen flex items-center justify-center overflow-hidden">
 
     <div class="w-full max-w-[1920px] h-full flex flex-col lg:flex-row relative">
 
-        <!-- ================= LEFT COLUMN: VISUALS ================= -->
         <div class="visual-column">
             
-            <!-- Background Glow -->
             <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-dark/30 rounded-full blur-[120px]"></div>
             
             <div class="relative z-10 w-full max-w-xl px-12 flex flex-col items-center">
                 
-                <!-- Main Header Text -->
                 <div class="mb-8 flex flex-col items-center space-y-4 text-center">
                     <div class="version-badge">
                         <span class="w-2 h-2 rounded-full bg-brand-DEFAULT animate-pulse"></span>
@@ -58,19 +49,14 @@
                     </h1>
                 </div>
 
-                <!-- 3D Phone Mockup -->
                 <div class="floating-phone-container">
                     
                     <div class="phone-frame">
-                        <!-- Notch -->
                         <div class="phone-notch">
                             <div class="notch-blackout"></div>
                         </div>
 
-                        <!-- Screen Content -->
                         <div class="phone-screen">
-                            
-                            <!-- App Header -->
                             <div class="flex justify-between items-center mb-1 z-10">
                                 <span class="font-black italic text-lg text-white tracking-tight">Spendly.</span>
                                 <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center">
@@ -78,7 +64,6 @@
                                 </div>
                             </div>
 
-                            <!-- Feature 1: Safe Spend -->
                             <div class="feature-card card-hero delay-1">
                                 <div class="absolute top-0 right-0 w-20 h-20 bg-brand-DEFAULT/20 blur-xl rounded-full"></div>
                                 <p class="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-1">Safe to Spend</p>
@@ -89,7 +74,6 @@
                                 </div>
                             </div>
 
-                            <!-- Feature 2: Weekend Mode -->
                             <div class="feature-card card-standard delay-2">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center">
@@ -105,7 +89,6 @@
                                 </div>
                             </div>
 
-                            <!-- Feature 3: Goals -->
                             <div class="feature-card card-standard delay-3" style="display: block;">
                                 <div class="flex justify-between items-end mb-2">
                                     <div>
@@ -121,7 +104,6 @@
                                 </div>
                             </div>
 
-                            <!-- Feature 4: Squad Sync -->
                             <div class="feature-card card-standard delay-4">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
@@ -138,21 +120,15 @@
                                 </div>
                             </div>
 
-                            <!-- Bottom Blur Gradient -->
                             <div class="absolute bottom-0 inset-x-0 h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
                         </div>
                     </div>
-                    
-                    <!-- Back Glow behind phone -->
                     <div class="absolute -inset-4 bg-brand-DEFAULT/20 blur-2xl -z-10 rounded-[3rem]"></div>
                 </div>
             </div>
-
-            <!-- Right Edge Blend -->
             <div class="side-blend-gradient"></div>
         </div>
 
-        <!-- ================= RIGHT COLUMN: FORM ================= -->
         <div class="form-column">
             <div class="auth-card">
                 
@@ -161,37 +137,33 @@
                     <p class="text-gray-500 text-sm" id="form-subtitle">Enter your details to access your dashboard.</p>
                 </div>
 
-                <form class="space-y-5" onsubmit="event.preventDefault(); window.location.href='index.html'">
+                <form class="space-y-5" id="authForm">
                     
-                    <!-- Name Field (Hidden) -->
                     <div id="name-field" class="hidden-field space-y-1.5">
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Full Name</label>
                         <div class="form-input-group">
-                            <input type="text" class="form-input" placeholder="John Doe">
+                            <input type="text" id="inputName" class="form-input" placeholder="John Doe">
                             <i class="ph-bold ph-user input-icon"></i>
                         </div>
                     </div>
 
-                    <!-- Email Field -->
                     <div class="space-y-1.5">
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Email</label>
                         <div class="form-input-group">
-                            <input type="email" class="form-input" placeholder="name@example.com">
+                            <input type="email" id="inputEmail" class="form-input" placeholder="name@example.com">
                             <i class="ph-bold ph-envelope-simple input-icon"></i>
                         </div>
                     </div>
 
-                    <!-- Password Field -->
                     <div class="space-y-1.5">
                         <label class="text-xs font-bold text-gray-400 uppercase tracking-wide ml-1">Password</label>
                         <div class="form-input-group">
-                            <input type="password" class="form-input" placeholder="••••••••">
+                            <input type="password" id="inputPassword" class="form-input" placeholder="••••••••">
                             <i class="ph-bold ph-lock-key input-icon"></i>
                             <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition"><i class="ph-bold ph-eye-slash"></i></button>
                         </div>
                     </div>
 
-                    <!-- Extras -->
                     <div id="login-extras" class="flex items-center justify-between text-xs">
                         <label class="flex items-center gap-2 cursor-pointer group">
                             <input type="checkbox" class="w-4 h-4 rounded border-gray-700 bg-[#0F0F0F] text-brand-DEFAULT focus:ring-brand-DEFAULT/50">
@@ -200,18 +172,15 @@
                         <a href="#" class="text-brand-light hover:text-white transition font-medium">Forgot Password?</a>
                     </div>
 
-                    <!-- Submit Button -->
                     <button type="submit" id="submit-btn" class="btn-primary">Log In</button>
 
-                    <!-- Divider -->
                     <div class="relative flex py-2 items-center">
                         <div class="flex-grow border-t border-white/10"></div>
                         <span class="flex-shrink-0 mx-4 text-[10px] font-bold text-gray-600 uppercase tracking-widest">Or</span>
                         <div class="flex-grow border-t border-white/10"></div>
                     </div>
 
-                    <!-- Google Button -->
-                    <button type="button" class="btn-social">
+                    <button type="button" class="btn-social" id="googleBtn">
                         <svg class="w-5 h-5" viewBox="0 0 24 24">
                             <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" style="color:#4285F4"></path>
                             <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" style="color:#34A853"></path>
@@ -222,7 +191,6 @@
                     </button>
                 </form>
 
-                <!-- Toggle Footer -->
                 <div class="text-center mt-6">
                     <p class="text-sm text-gray-500">
                         <span id="toggle-text">Don't have an account?</span> 
@@ -233,8 +201,9 @@
         </div>
     </div>
 
-    <!-- Toggle Script -->
-     <script src="./login.js"></script>
+    <script src="../backend/login.js"></script>
+     
+    <script type="module" src="../backend/integration.js"></script>
     
 </body>
 </html>
