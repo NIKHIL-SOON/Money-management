@@ -15,20 +15,29 @@
 <h2>Git & Collaboration Rules</h2>
 <h3>
 1. Create a branch:  git checkout -b branch-name
+  <br>
 2. Switch branch :  git checkout branch-name
+  <br>
 3. Pull latest main : git checkout main
                       git pull origin main
                       git checkout 
                       git merge main
+  <br>
 4. Commit : 
             git add .
             git commit -m "message"
 
+   <br>
+
 5. Push :
            git push origin
+<br>
 
 
-6. Create PR to main
+7. Create PR to main
+
+
+<br>
 
 
 
